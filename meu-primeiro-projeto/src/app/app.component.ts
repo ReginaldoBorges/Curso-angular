@@ -2,11 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: 
-    `
-      <app-title></app-title>
-      <router-outlet></router-outlet>
-    `
+  template: `
+    <app-title title="Para passar no lifecycle OnChange"></app-title>
+    <router-outlet></router-outlet>
+  `
 })
 export class AppComponent implements OnInit{
 
@@ -14,7 +13,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     setTimeout( () => {
-      console.log(1);   
+      console.log("Passou no OnInit");
     }, 5000);
   }
 
