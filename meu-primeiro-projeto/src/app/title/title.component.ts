@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-title',
@@ -9,12 +9,12 @@ export class TitleComponent implements OnInit, OnChanges {
 
 @Input() public title:string = "Bem vindo";
 
+  ngOnInit(): void {
+  }
+
   constructor() { }
   ngOnChanges(): void {
     console.log("Passou no OnChange");
-  }
-
-  ngOnInit(): void {
   }
 
 }
