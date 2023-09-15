@@ -13,7 +13,9 @@ export class AppComponent implements OnInit{
   constructor(){ }
 
   ngOnInit(): void {
-      
+    setTimeout( () => {
+      console.log(1);   
+    }, 5000);
   }
 
 }
