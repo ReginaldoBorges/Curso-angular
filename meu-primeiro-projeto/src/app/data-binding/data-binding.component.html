@@ -32,8 +32,18 @@
 <button (click) = "alertValor('Valor passado pelo evento!')">Evento - passando o valor</button>
 <br>
 <br>
+
 <!--Exemplo de evento com a tag div-->
 <div  (mousemove) = "mouseMoveTest($event)" style="background: red; width: 300px; height: 200px;"></div>
 {{position.x}} - {{position.y}}
+
 <br>
 <br>
+<hr>
+<!--Trecho utilizado para os exemplos do data binding Property bindig-->
+<h1>Two-way binding</h1>
+
+<!--Exemplo de evento com o componente input-->
+<input [(ngModel)] = "nome">
+{{ nome }}
+

@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class DataBindingComponent {
 
   // Propriedades dos data binding Interpolation
-  public nome: string = "Borges";
+  public nome: string = "Reginaldo";
   public idade: number = 43;
   public maisUm: number = 1 ;
 
