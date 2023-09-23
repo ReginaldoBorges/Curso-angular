@@ -1,3 +1,5 @@
+
+<!--Trecho utilizado para os exemplos do data binding Interpolation-->
 <h1>Interpolation</h1>
 
 <p>{{ nome }}</p> tem {{ idade }} anos.
@@ -9,3 +11,29 @@
 <p>Quanto é {{idade}} + {{maisUm}}?</p>
 
 <p>{{ idade + 1 }}</p>
+
+<hr>
+
+<!--Trecho utilizado para os exemplos do data binding Property bindig-->
+<h1>Property binding</h1>
+<button [disabled] = "checkedDisabled" >Button</button>
+<img [src] = "imgSrc" [title]="imgTitle" [alt] = "imgTitle">
+
+<br>
+<br>
+<hr>
+<!--Trecho utilizado para os exemplos do data binding Property bindig-->
+<h1>Event binding</h1>
+
+<!--Exemplo de evento do componente button, sem e com passagem de valor-->
+<button (click) = "alertInfo()" >Evento - sem passar valor</button>
+<br>
+<br>
+<button (click) = "alertValor('Valor passado pelo evento!')">Evento - passando o valor</button>
+<br>
+<br>
+<!--Exemplo de evento com a tag div-->
+<div  (mousemove) = "mouseMoveTest($event)" style="background: red; width: 300px; height: 200px;"></div>
+{{position.x}} - {{position.y}}
+<br>
+<br>
