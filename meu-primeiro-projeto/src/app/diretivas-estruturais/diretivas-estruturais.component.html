@@ -1,7 +1,18 @@
+<!--Trecho para exemplo da diretiva ngIf-->
+<h1>Diretiva (ngIf)</h1>
 <p *ngIf="condition; else elseBlock">True</p>
 <ng-template #elseBlock>False</ng-template>
-
+<hr>
 <p *ngIf="conditionClick">True</p>
 <p *ngIf="!conditionClick">False</p>
-
 <button (click)="onClick()">Clique</button>
+<hr>
+<!--Trecho para exemplo da diretiva ngFor-->
+<h1>Diretiva (ngFor)</h1>
+<ul>
+    <li *ngFor="let item of list; let i = index" (click)="onClickEventList(i)">
+       [{{i + 1}}] - Nome: {{item.nome}} - Idade: {{item.idade}}
+    </li>
+</ul>
+
+<button (click) = "onClickAddList()">Adicionar na lista</button>
