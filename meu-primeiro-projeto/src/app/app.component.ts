@@ -6,7 +6,10 @@ import { Component, OnInit, DoCheck, AfterContentInit, AfterContentChecked, Afte
   <!--
   <app-data-binding></app-data-binding>
   -->
+  <!--
     <app-diretivas-estruturais></app-diretivas-estruturais>
+  -->
+  <app-diretivas-atributos></app-diretivas-atributos>
     <router-outlet></router-outlet>
   `
 })
