@@ -16,3 +16,20 @@
 </ul>
 
 <button (click) = "onClickAddList()">Adicionar na lista</button>
+<hr>
+<!--Trecho para exemplo da diretiva ngSwitch-->
+<h1>Diretiva ngSwitch</h1>
+
+<input type="text" [(ngModel)]="nome">
+
+<div [ngSwitch]="nome">
+    <p *ngSwitchCase="'Borges'">
+        Borges
+    </p>
+    <p *ngSwitchCase="'Reginaldo'">
+        Reginaldo
+    </p>
+    <p *ngSwitchDefault>
+        Deu ruim, pesquisa não satisfatória!
+    </p>
+</div>

@@ -13,6 +13,7 @@ export class DiretivasEstruturaisComponent{
     {nome: "Reginaldo", idade: 43},
     {nome: "Borges", idade: 34},
   ];
+  public nome: string = "Borges";
 
   constructor(){}
 
