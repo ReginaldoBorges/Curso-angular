@@ -10,6 +10,8 @@ export class DiretivasAtributosComponent {
   public valor: boolean = true;
   public heigthPx: string = "20px";
   public backgroundColor: string = "red";
+  public nomeInput: string = "Borges";
+  public list: Array<{nome: string}> = [];
 
   constructor(){}
 
@@ -33,4 +35,7 @@ export class DiretivasAtributosComponent {
 
   }
 
+  public salvar():void {
+    this.list.push({nome: this.nomeInput});
+  }
 }

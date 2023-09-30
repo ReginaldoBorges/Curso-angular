@@ -1,8 +1,23 @@
 <!--Trecho para exemplificar ngClass-->
-<h1>Diretiva ngClass</h1>
+<div *ngIf="nomeInput == 'Borges'">
+    <h1>Diretiva ngClass</h1>
+    <p [ngClass]="{'active':valor, 'disable':!valor}">ngClass</p>
+    <hr>
 
-<p [ngClass]="{'active':valor, 'disable':!valor}">ngClass</p>
-<hr>
-<!--Trecho para exemplificar ngStyle-->
-<h1>Diretiva ngStyle</h1>
-<p [ngStyle]="{'height': heigthPx, 'background': backgroundColor}" >ngStyle</p>
+    <!--Trecho para exemplificar ngStyle-->
+    <h1>Diretiva ngStyle</h1>
+    <p [ngStyle]="{'height': heigthPx, 'background': backgroundColor}" >ngStyle</p>
+    <hr>
+</div>
+<!--Trecho para exemplificar ngModel-->
+<h1>Diretiva ngModel</h1>
+
+<input [(ngModel)]="nomeInput">
+<button (click)="salvar()">Salvar</button>
+<li *ngFor="let item of list">{{item.nome}}</li>
+
+
+
+
+
+
