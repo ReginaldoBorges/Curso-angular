@@ -29,5 +29,16 @@
     <p>{{item.nome}}<p>
 </ng-template>
 
-<!--Trecho utilizando o ngContent arqui e na primeira linha-->
+<!--Trecho utilizando o ngContent aqui e na primeira linha-->
 <ng-content select="h3"></ng-content>
+
+<hr>
+<!--Trecho utilizando o pipe-->
+<h1>Modificação de informação utilizando o pipe</h1>
+<li *ngFor="let item of list">{{item.nome}}</li> <!--Nome sem utilização do pipe-->
+<li *ngFor="let item of list">{{item.nome | uppercase}}</li> <!--Nome com utilização do pile-->
+
+<p>{{ date}}</p> <!--Formatado de data padrão sem o pipe-->
+<p>{{ date | date: 'dd/MM/yyyy'}}</p> <!--Formatação de data utilizando o pipe-->
+
+

@@ -11,7 +11,8 @@ export class DiretivasAtributosComponent {
   public heigthPx: string = "20px";
   public backgroundColor: string = "red";
   public nomeInput: string = "Borges";
-  public list: Array<{nome: string}> = [];
+  public list: Array<{nome: string}> = [{nome: "Reginaldo Borges"}];
+  public date: Date = new Date();
 
   constructor(){}
 
