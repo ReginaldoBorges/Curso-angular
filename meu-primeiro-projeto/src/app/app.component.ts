@@ -5,10 +5,8 @@ import { Component, OnInit, DoCheck, AfterContentInit, AfterContentChecked, Afte
   template: `
   <!--
   <app-data-binding></app-data-binding>
-  -->
-  <!--
-    <app-diretivas-estruturais></app-diretivas-estruturais>
-  -->
+
+   <app-diretivas-estruturais></app-diretivas-estruturais>
 
   <app-diretivas-atributos>
     <h1>Aulas de Diretivas Atributo</h1>
@@ -21,7 +19,8 @@ import { Component, OnInit, DoCheck, AfterContentInit, AfterContentChecked, Afte
     <h1>Reginaldo</h1>
     <h3>Borges</h3>
   </app-diretivas-atributos>
-  
+  -->
+    <app-new-component></app-new-component>
     <router-outlet></router-outlet>
   `
 })
