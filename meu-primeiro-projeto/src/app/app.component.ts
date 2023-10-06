@@ -19,15 +19,25 @@ import { Component, OnInit, DoCheck, AfterContentInit, AfterContentChecked, Afte
     <h1>Reginaldo</h1>
     <h3>Borges</h3>
   </app-diretivas-atributos>
-  -->
+
     <app-new-component></app-new-component>
-    <router-outlet></router-outlet>
+  -->
+  <app-input [contador]="addValue"></app-input>
+  <button (click)="Add()">Add</button>
+  <router-outlet></router-outlet>
   `
 })
 export class AppComponent implements OnInit{
+
+  public addValue:number = 1;
 
   constructor(){ }
 
   ngOnInit(): void {
   }
+ 
+  public Add(){
+    this.addValue += 1;
+  }
+
 }
