@@ -25,7 +25,13 @@ import { Component, OnInit, DoCheck, AfterContentInit, AfterContentChecked, Afte
   <app-input [contador]="addValue"></app-input>
   <button (click)="Add()">Add</button>
   -->
-  <app-output></app-output>
+
+  <ng-template [ngIf]="objetoPessoa">
+    <h1>{{objetoPessoa.nome}}</h1>
+    <h2>{{objetoPessoa.idade}}</h2>
+  </ng-template>
+
+  <app-output (enviaDados)="getDados($event)"></app-output>
 
   <router-outlet></router-outlet>
   `
@@ -34,6 +40,8 @@ export class AppComponent implements OnInit{
 
   public addValue:number = 1;
 
+  public objetoPessoa: {nome: string, idade:number} | undefined;
+
   constructor(){ }
 
   ngOnInit(): void {
@@ -41,6 +49,10 @@ export class AppComponent implements OnInit{
  
   public Add(){
     this.addValue += 1;
+  }
+
+  public getDados(eventObjeto: {nome: string, idade:number}):void {
+    this.objetoPessoa = eventObjeto;
   }
 
 }

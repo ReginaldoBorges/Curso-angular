@@ -21,9 +21,8 @@ export class OutputComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public getDados(event: number) {
-    console.log(this.list[event]);
-    this.enviaDados.emit(this.list[event]);
+  public getDados(index: number) {
+    this.enviaDados.emit(this.list[index]);
   }
 
 }
