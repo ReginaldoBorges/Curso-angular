@@ -21,9 +21,12 @@ import { Component, OnInit, DoCheck, AfterContentInit, AfterContentChecked, Afte
   </app-diretivas-atributos>
 
     <app-new-component></app-new-component>
-  -->
+
   <app-input [contador]="addValue"></app-input>
   <button (click)="Add()">Add</button>
+  -->
+  <app-output></app-output>
+
   <router-outlet></router-outlet>
   `
 })
