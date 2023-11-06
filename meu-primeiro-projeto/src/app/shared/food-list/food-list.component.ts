@@ -17,9 +17,9 @@ export class FoodListComponent implements OnInit{
   ngOnInit() {
     this.foodList = this.foodListService.fooList();
 
-    this.foodListService.eventEmit.subscribe(
-      res => alert(`Adicionado o item => ${res}`)
-    );
+    this.foodListService.eventEmit.subscribe({
+        next: (res: any) => alert(`Adicionando item => ${res}`),
+        error: (err: any) => alert(`Error reportado => ${err}`),
+    });
   }
-
 }
