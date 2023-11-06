@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { FoodListService } from 'src/app/services/food-list.service';
 
 @Component({
@@ -13,5 +13,5 @@ export class FoodAddComponent {
   public listAddItem(value: string){
     return this.foodListService.foodListAdd(value);
   }
-  
+
 }
