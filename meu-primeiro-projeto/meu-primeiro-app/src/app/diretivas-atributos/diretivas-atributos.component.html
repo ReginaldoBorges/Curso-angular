@@ -1,0 +1,44 @@
+<ng-content select="h1"></ng-content>
+
+<!--Trecho para exemplificar ngClass-->
+<div *ngIf="nomeInput == 'Borges'">
+    <h1>Diretiva ngClass</h1>
+    <p [ngClass]="{'active':valor, 'disable':!valor}">ngClass</p>
+    <hr>
+
+    <!--Trecho para exemplificar ngStyle-->
+    <h1>Diretiva ngStyle</h1>
+    <p [ngStyle]="{'height': heigthPx, 'background': backgroundColor}" >ngStyle</p>
+    <hr>
+</div>
+<!--Trecho para exemplificar ngModel-->
+<h1>Diretiva ngModel</h1>
+
+<input [(ngModel)]="nomeInput">
+<button (click)="salvar()">Salvar</button>
+<li *ngFor="let item of list">{{item.nome}}</li>
+<hr>
+
+<!--Trecho utilizando o ngTemplate-->
+<h1>Modelo ngTamplate</h1>
+<ng-template [ngIf]="true">
+    <p>Conteúdo dentro de um ng template</p>
+</ng-template>
+
+<ng-template ngFor let-item [ngForOf]="list">
+    <p>{{item.nome}}<p>
+</ng-template>
+
+<!--Trecho utilizando o ngContent aqui e na primeira linha-->
+<ng-content select="h3"></ng-content>
+
+<hr>
+<!--Trecho utilizando o pipe-->
+<h1>Modificação de informação utilizando o pipe</h1>
+<li *ngFor="let item of list">{{item.nome}}</li> <!--Nome sem utilização do pipe-->
+<li *ngFor="let item of list">{{item.nome | uppercase}}</li> <!--Nome com utilização do pile-->
+
+<p>{{ date}}</p> <!--Formatado de data padrão sem o pipe-->
+<p>{{ date | date: 'dd/MM/yyyy'}}</p> <!--Formatação de data utilizando o pipe-->
+
+
