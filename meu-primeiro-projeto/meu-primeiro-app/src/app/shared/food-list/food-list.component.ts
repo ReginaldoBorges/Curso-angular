@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FoodList } from 'src/app/module/food-list';
 
 // Services
 import { FoodListService } from 'src/app/services/food-list.service';
@@ -10,12 +11,16 @@ import { FoodListService } from 'src/app/services/food-list.service';
 })
 export class FoodListComponent implements OnInit{
   
-  public foodList: Array<string> = [];
+  public foodList: FoodList | any;
 
   constructor( private foodListService: FoodListService ) {}
 
   ngOnInit() {
-    this.foodList = this.foodListService.fooList();
+     this.foodListService.fooList().subscribe({
+       next: (res : any) => this.foodList = res,
+       error: (error: any) => console.log(error)
+     }
+     );
 
     this.foodListService.eventEmit.subscribe({
         next: (res: any) => alert(`Adicionando item => ${res}`),
