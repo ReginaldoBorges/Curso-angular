@@ -1,6 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+
+// Module Interface
 import { FoodList } from '../module/food-list';
 
 @Injectable({
@@ -11,6 +13,11 @@ export class FoodListService {
 
   private url: string = 'http://localhost:3000/'; // list-food
 
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+  };
   // private list: Array<string> = ['X Bacon', 'Feijão', 'Ovos'];
 
   constructor(private http: HttpClient) {}
@@ -33,7 +40,11 @@ export class FoodListService {
 
   public foodListAdd(value: string): Observable<Array<FoodList>> {
     return this.http
-      .post<Array<FoodList>>(`${this.url}list-food`, { nome: value })
+      .post<Array<FoodList>>(
+        `${this.url}list-food`,
+        { nome: value },
+        this.httpOptions
+      )
       .pipe(
         (res) => res,
         (error) => error
@@ -42,7 +53,11 @@ export class FoodListService {
 
   public foodListEdit(value: string, id: number): Observable<Array<FoodList>> {
     return this.http
-      .put<Array<FoodList>>(`${this.url}list-food/${id}`, { nome: value })
+      .put<Array<FoodList>>(
+        `${this.url}list-food/${id}`,
+        { nome: value },
+        this.httpOptions
+      )
       .pipe(
         (res) => res,
         (error) => error
@@ -50,10 +65,12 @@ export class FoodListService {
   }
 
   public foodListDelete(id: number): Observable<Array<FoodList>> {
-    return this.http.delete<Array<FoodList>>(`${this.url}list-food/${id}`).pipe(
-      (res) => res,
-      (error) => error
-    );
+    return this.http
+      .delete<Array<FoodList>>(`${this.url}list-food/${id}`, this.httpOptions)
+      .pipe(
+        (res) => res,
+        (error) => error
+      );
   }
 
   // public foodListAlert(value: string) {
