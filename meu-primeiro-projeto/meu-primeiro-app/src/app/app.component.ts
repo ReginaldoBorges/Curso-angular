@@ -24,7 +24,6 @@ import { Component, OnInit, DoCheck, AfterContentInit, AfterContentChecked, Afte
 
   <app-input [contador]="addValue"></app-input>
   <button (click)="Add()">Add</button>
-  -->
 
   <ng-template [ngIf]="objetoPessoa">
     <h1>{{objetoPessoa.nome}}</h1>
@@ -32,7 +31,10 @@ import { Component, OnInit, DoCheck, AfterContentInit, AfterContentChecked, Afte
   </ng-template>
 
   <app-output (enviaDados)="getDados($event)"></app-output>
+-->
 
+<app-food-add></app-food-add>
+  <app-food-list></app-food-list>
   <router-outlet></router-outlet>
   `
 })
