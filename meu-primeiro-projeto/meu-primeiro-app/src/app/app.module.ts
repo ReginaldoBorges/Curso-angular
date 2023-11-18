@@ -10,22 +10,16 @@ import { DiretivasEstruturaisComponent } from './diretivas-estruturais/diretivas
 import { DiretivasAtributosComponent } from './diretivas-atributos/diretivas-atributos.component';
 import { SharedModule } from './shared/shared.module';
 
-
 @NgModule({
   declarations: [
     AppComponent,
     TitleComponent,
     DataBindingComponent,
     DiretivasEstruturaisComponent,
-    DiretivasAtributosComponent
+    DiretivasAtributosComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    SharedModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, SharedModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

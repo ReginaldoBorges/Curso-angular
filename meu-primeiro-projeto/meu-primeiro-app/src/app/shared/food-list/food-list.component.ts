@@ -22,10 +22,28 @@ export class FoodListComponent implements OnInit {
 
     this.foodListService.eventEmit.subscribe({
       next: (res: any) => {
-        alert(`Adicionado o item => ${res.nome}`);
+        // alert(`Adicionado o item => ${res.nome}`);
         return this.foodList.push(res);
       },
       error: (err: any) => alert(`Error reportado => ${err}`),
+    });
+  }
+
+  public foodListEdit(value: string, id: number) {
+    this.foodListService.foodListEdit(value, id).subscribe({
+      next: (res: any) => console.log(res),
+      error: (error: any) => error,
+    });
+  }
+
+  public foodListDelete(id: number) {
+    this.foodListService.foodListDelete(id).subscribe({
+      next: (res: any) => {
+        this.foodList = this.foodList.filter((item) => {
+          return id !== item.id;
+        });
+      },
+      error: (error: any) => error,
     });
   }
 }

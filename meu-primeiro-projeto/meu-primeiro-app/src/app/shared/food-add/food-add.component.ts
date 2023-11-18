@@ -1,4 +1,10 @@
-import { Component, EventEmitter } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { FoodListService } from 'src/app/services/food-list.service';
 
 @Component({
