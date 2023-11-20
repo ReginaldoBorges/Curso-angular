@@ -1,8 +1,28 @@
 <form #form="ngForm">
   <label
     >Nome:
-    <input type="text" name="nome" ngModel />
+    <input
+      type="text"
+      name="nome"
+      #nome="ngModel"
+      [ngModel]="nome.value"
+      required="true"
+    />
   </label>
+  <span *ngIf="!nome.valid || (!nome.dirty && !nome.touched)"> Invalid </span>
+
+  <br />
+  <br />
+  {{ form.valid }}
+  {{ form.dirty }}
+  {{ form.touched }}
+  <!--
+    {{ form.valid }} - Se todo o conteúdo requerio do formulário é válido
+    valid - Se é valido
+    dirty - Se tem sujeira
+    valid - Se foi tocado
+  -->
+
   <br />
   <br />
   <label
