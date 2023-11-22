@@ -1,9 +1,17 @@
-import { Component, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  DoCheck,
+  AfterContentInit,
+  AfterContentChecked,
+  AfterViewInit,
+  AfterViewChecked,
+} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   template: `
-  <!--
+    <!--
   <app-data-binding></app-data-binding>
 
    <app-diretivas-estruturais></app-diretivas-estruturais>
@@ -31,30 +39,28 @@ import { Component, OnInit, DoCheck, AfterContentInit, AfterContentChecked, Afte
   </ng-template>
 
   <app-output (enviaDados)="getDados($event)"></app-output>
--->
 
-<app-food-add></app-food-add>
+  <app-food-add></app-food-add>
   <app-food-list></app-food-list>
-  <router-outlet></router-outlet>
-  `
+-->
+    <app-forms></app-forms>
+    <router-outlet></router-outlet>
+  `,
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
+  public addValue: number = 1;
 
-  public addValue:number = 1;
+  public objetoPessoa: { nome: string; idade: number } | undefined;
 
-  public objetoPessoa: {nome: string, idade:number} | undefined;
+  constructor() {}
 
-  constructor(){ }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
- 
-  public Add(){
+  public Add() {
     this.addValue += 1;
   }
 
-  public getDados(eventObjeto: {nome: string, idade:number}):void {
+  public getDados(eventObjeto: { nome: string; idade: number }): void {
     this.objetoPessoa = eventObjeto;
   }
-
 }
